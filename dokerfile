@@ -1,17 +1,16 @@
 FROM node:20-slim
 
-# Instalar dependencias necesarias para Chromium (más liviano)
 RUN apt-get update && apt-get install -y \
-  fonts-liberation \
-  libatk-bridge2.0-0 \
-  libnss3 \
-  libxss1 \
-  libasound2 \
-  libxshmfence1 \
-  libgbm1 \
-  wget \
-  ca-certificates \
-  --no-install-recommends && rm -rf /var/lib/apt/lists/*
+    fonts-liberation \
+    libatk-bridge2.0-0 \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libxshmfence1 \
+    libgbm1 \
+    wget \
+    ca-certificates \
+    --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY . .
